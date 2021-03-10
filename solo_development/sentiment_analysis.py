@@ -1,11 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Mar  7 20:06:25 2021
-
-@author: linux
-"""
-
+# IMPORTING LIBRARIES 
 
 import pickle
 import pandas as pd
@@ -20,11 +13,15 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction.text import CountVectorizer
 import plotly.graph_objects as go
 
+# DECLARING GLOBAL VARIABLES 
+
 app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 project_name = "Sentiment Analysis with Insights"
 
+# DECLARING MY FUNCTIONS 
+
 def open_browser():
-    return webbrowser.open_new("http://127.0.0.1:8050/")
+    return webbrowser.open("http://127.0.0.1:8050/")
 
 def load_model():
     global pickle_model
@@ -131,7 +128,9 @@ def update_dropdown(n_clicks, value):
         return dbc.Alert("Positive", color="success")
     else:
         return dbc.Alert("Unknown", color="dark")
-    
+
+# DECLARING MAIN FUNCTION 
+        
 def main():
     global app
     global project_name
@@ -142,5 +141,10 @@ def main():
     app.run_server()
     app = None
     project_name = None
+
+# CALLING MAIN FUNCTION 
+    
 if __name__ == '__main__':
     main()
+
+
