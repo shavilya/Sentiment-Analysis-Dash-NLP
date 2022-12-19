@@ -5,6 +5,8 @@ import pandas as pd
 import numpy as np
 import webbrowser
 import dash
+from dash import Dash, callback, html, dcc, dash_table, Input, Output, State, MATCH, ALL
+
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
@@ -28,7 +30,7 @@ def load_model():
     global vocab
     global df, dfs
     
-    df = pd.read_csv("balanced_review.csv")    
+    df = pd.read_csv("balanced_reviews.csv")    
     dfs = pd.read_csv("scrappedReviews.csv")   
     
     
